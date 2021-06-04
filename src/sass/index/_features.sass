@@ -1,0 +1,82 @@
+.features
+  background-color: $c-active
+  padding: 75px 0px 105px
+  @media ( max-width: $md4 )
+    padding: 40px 0px 25px
+    .container
+      padding-left: 16px
+      padding-right: 16px
+  &__title
+    font-family: 'Quiche'
+    color: #f2f2f3
+    font-size: 42px
+    font-weight: 500
+    text-align: center
+    margin-bottom: 55px
+    @media ( max-width: $md3 )
+      font-size: 30px
+    @media ( max-width: $md4 )
+      font-size: 28px
+      line-height: 36px
+      margin-bottom: 38px
+  &-list
+    max-width: 760px
+    margin: 0px auto
+    margin-bottom: 75px
+    @media ( max-width: $md4 )
+      margin-bottom: 46px
+    &__item
+      padding: 25px 30px 0px
+      background-color: $c-sec
+      color: $c-active
+      width: 100%
+      font-size: 24px
+      font-weight: 500
+      cursor: pointer
+      margin-bottom: 2px
+      @media ( max-width: $md2 )
+        font-size: 20px
+      @media ( max-width: $md4 )
+        font-size: 16px
+        line-height: 19px
+        padding: 20px 22px 0px
+      &.active
+        padding: 25px 30px
+        @media ( max-width: $md4 )
+          padding: 20px 22px
+        svg
+          transform: rotate(45deg)
+      span
+        display: flex
+        justify-content: space-between
+        align-items: center
+        @media ( max-width: $md4 )
+          svg
+            height: 18px
+            width: 18px
+      ul
+        padding-top: 30px
+        font-size: 16px
+        max-height: 0
+        overflow: hidden
+        transition: max-height 0.5s ease-out
+        text-align: left
+        @media ( max-width: $md4 )
+          padding-top: 21px
+        li:not(:last-child)
+          margin-bottom: 25px
+  .warning
+    &-list
+      max-width: 760px
+      margin: 0px auto
+      font-size: 16px
+      line-height: 20px
+      @media ( max-width: $md4 )
+        font-size: 14px
+      &__item
+        color: $c-sec
+        position: relative
+        &:not(:last-child)
+          margin-bottom: 15px
+          @media ( max-width: $md4 )
+            margin-bottom: 18px

@@ -1,0 +1,97 @@
+body.support
+  .main
+    background-color: $c-sec
+    padding: 70px 0px
+    .container
+      display: block
+      text-align: center
+    &__title
+      font-size: 59px
+      color: $c-active
+      font-family: 'Quiche'
+      font-weight: 500
+      margin-bottom: 40px
+      @media (max-width: $md3)
+        font-size: 36px
+    &__subtitle
+      color: $c-active
+      font-size: 25px
+      font-family: 'Quiche'
+      margin-bottom: 55px
+      line-height: 1.15
+      @media (max-width: $md3)
+        font-size: 20px
+      @media (max-width: $md4)
+        br
+          display: none
+    &-form
+      width: 50%
+      margin: 0 auto
+      color: $c-active
+      display: flex
+      flex-wrap: wrap
+      @media (max-width: $md2)
+        width: 100%
+      &__group
+        display: flex
+        flex-direction: column
+        flex-basis: 47.5%
+        @media (max-width: $md3)
+          flex-basis: 100%
+        &:nth-child(odd)
+          margin-right: 5%
+          @media (max-width: $md3)
+            margin-right: 0
+        &:not(:last-child)
+          margin-bottom: 25px
+        &:nth-last-child(4)
+          flex-basis: 100%
+          margin-right: 0
+        &_textarea
+          flex-basis: 100%
+          margin-right: 0
+        &:last-child
+          flex-basis: 100%
+      &__file
+        display: none
+        padding: 20px
+        color: $c-sec
+        background-color: $c-normal
+        cursor: pointer
+        &::-webkit-file-upload-button
+          display: none
+        &_custom
+          padding: 20px
+          color: $c-sec
+          background-color: $c-normal
+          cursor: pointer
+          &:hover
+            background-color: $c-normal-2
+      &__label
+        font-size: 16px
+        padding-bottom: 5px
+        align-self: flex-start
+      &__input
+        border: 1px solid $c-active
+        padding: 10px 15px
+        resize: none
+        border-radius: 5px
+        @media (max-width: $md3)
+          padding: 15px 25px
+        &#userText
+          height: 150px
+      &__submit
+        background-color: $c-active
+        color: $c-sec
+        border-radius: 20px
+        padding: 15px 50px
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        @media (max-width: $md4)
+          padding: 20px 50px
+        &:hover
+          background-color: darken($c-active, 50%)
+  .collage
+    background-color: $c-active

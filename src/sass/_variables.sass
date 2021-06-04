@@ -1,0 +1,154 @@
+$c-active: #2E454A
+$c-normal: #83574c
+$c-normal-2: #b89380
+$c-sec: #eeece6
+
+// Контейнер сайта v2.0
+$minWidth: 320px // Минимальная ширина
+$maxWidth: 1660 // Максимальная ширина МАКЕТА
+$maxWidthContainer: 1170 // Максимальная ширина КОНТЕЙНЕРА
+$md0: 2561+px
+$md1: $maxWidthContainer + 12+px // Первая точка
+$md2: 992+px
+$md3: 768+px
+$md4: 576+px
+
+@mixin button($width: 170px, $c: #000, $bgc: #fff)
+  width: $width
+  color: $c
+  font-size: 18px
+  line-height: 1.55
+  font-weight: 500
+  border-radius: 30px
+  padding: 9px 0px
+  background-color: $bgc
+
+%arrow
+  width: 60px!important
+  height: 60px!important
+  &::after
+    border-radius: 50%
+    content: ''!important
+    width: inherit
+    height: inherit
+    background-image: url('../img/icons/arrow.svg')
+    background-repeat: no-repeat
+    background-size: contain
+    background-color: #fff
+    display: flex
+    align-items: center
+    justify-content: center
+  &_reverse
+    transform: rotate(180deg)
+
+.swiper-button
+  &-disabled
+    display: none!important
+  &-next, &-prev
+    @extend %arrow
+  &-prev
+    @extend %arrow_reverse
+*
+  transition: .25s all linear
+
+.collage
+  padding-top: 70px
+  color: #efece5
+  background-color: $c-active
+  >.container
+    position: relative
+    height: 593px
+    @media ( max-width: $md3 )
+      height: 453px
+  &__title
+    font-size: 59px
+    font-family: 'Quiche'
+    font-weight: 600
+    margin-bottom: 20px
+    @media ( max-width: $md4 )
+      font-size: 32px
+  &__subtitle
+    font-size: 25px
+    @media ( max-width: $md4 )
+      font-size: 20px
+  &-base
+    height: 400px
+    background-color: $c-sec
+    @media ( max-width: $md3 )
+      height: 200px
+    .container
+      position: relative
+    img
+      position: absolute
+      right: 0
+      top: 50px
+      width: 386px
+      transform: rotate(-8deg)
+      @media ( max-width: $md4 )
+        width: 220px
+        top: 90px
+        right: 50px
+  &-grid
+    display: grid
+    grid-template-columns: 1fr 329px 1fr
+    grid-column-gap: 20px
+    position: absolute
+    top: 50px
+    @media ( max-width: $md3 )
+      grid-template-columns: 1fr 100px 1fr
+    @media ( max-width: $md4 )
+      grid-template-columns: 1fr
+      left: -10px
+    &__block
+      display: flex
+      @media ( max-width: $md4 )
+        display: none
+      &:first-child
+        margin-top: 200px
+      &:nth-child(3)
+        margin-top: 100px
+        .hero-collage-grid__group
+          margin-top: 0
+          &:first-child
+            margin-top: 50px
+    &__group
+      &:nth-child(2)
+        margin-top: 50px
+    &__cell
+      >picture
+        width: 196.5px
+        height: 196.5px
+      &_main
+        width: 490px
+        position: relative
+        left: -90px
+        top: 0
+        @media ( max-width: $md3 )
+          width: 100px
+          left: -70px
+          top: 100px
+        @media ( max-width: $md4 )
+          left: 0
+          top: 0
+        >picture
+          position: absolute
+          width: 490px
+          height: 824px
+          @media ( max-width: $md3 )
+            width: 230px
+            height: auto
+          @media ( max-width: $md4 )
+            width: 320px
+
+.footer
+  padding: 50px 0px 17px
+  background-color: $c-active
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &-logo__image
+    width: 60px
+  &__link, &__info
+    color: #efece5
+    font-size: 20px

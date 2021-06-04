@@ -1,0 +1,143 @@
+.main
+  background-color: $c-sec
+  padding: 20px 0px
+  .container
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+  &-block
+    width: 50%
+    display: flex
+    flex-direction: column
+    @media ( max-width: $md2 )
+      width: 100%
+    &:last-child
+      align-items: center
+      position: relative
+      @media ( max-width: $md2 )
+        display: none
+      >picture
+        width: 392px
+        transform: rotate(10deg)
+      img
+        padding-top: 28px
+    &:first-child
+      .main-block__image
+        width: 75px
+        @media ( max-width: $md4 )
+          width: 50px
+    &__subtitle
+      color: #27464b
+      font-size: 26px
+      font-weight: 400
+      margin-bottom: 16px
+      @media ( max-width: $md2 )
+        text-align: center
+      @media ( max-width: $md4 )
+        display: none
+    &__title
+      padding-top: 96px
+      margin-bottom: 90px
+      position: relative
+      @media ( max-width: $md2 )
+        display: flex
+        flex-direction: column
+        br
+          display: none
+      @media ( max-width: $md4 )
+        text-align: center
+      span
+        font-size: 59px
+        line-height: 0.95
+        font-weight: 500
+        @media ( max-width: $md2 )
+          font-size: 55px
+        @media ( max-width: $md3 )
+          font-size: 50px
+        @media ( max-width: $md4 )
+          font-size: 36px
+        &:not(:nth-child(3))
+          font-family: 'Quiche'
+        &:first-child
+          color: #bf8949
+        &:nth-child(3)
+          color: #27464b
+          font-size: 20px
+          line-height: 1.15
+          font-weight: 400
+          position: absolute
+          bottom: 55px
+          right: 0
+          @media ( max-width: $md2 )
+            position: relative
+            bottom: 0
+            right: 0
+            order: 9
+        &:last-child
+          color: #27464b
+      &::after
+        display: block
+        content: ''
+        width: 240px
+        height: 150px
+        background-image: url('../img/arrow-black.svg')
+        background-repeat: no-repeat
+        background-size: contain
+        position: absolute
+        top: 210px
+        right: -170px
+        transform: rotate(345deg)
+        @media ( max-width: $md2 )
+          display: none
+  &-group
+    margin-bottom: 42px
+    display: flex
+    @media ( max-width: $md2 )
+      justify-content: center
+    @media ( max-width: $md4 )
+      display: none
+    &__button
+      @include button(190px, #efece5, $c-normal-2)
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 10px
+      padding: 15px
+      @media ( max-width: $md2 )
+        background-color: transparent!important
+      &:not(:last-child)
+        margin-right: 16px
+        background-color: $c-active
+  &-link
+    @media ( max-width: $md2 )
+      width: 50%
+      margin: 0 auto
+    @media ( max-width: $md4 )
+      display: none
+    *
+      color: #27464b
+      display: block
+    span
+      font-size: 25px
+      font-weight: 400
+      margin-right: 32px
+      @media ( max-width: $md2 )
+        font-size: 20px
+    a
+      font-size: 23px
+      font-weight: 500
+
+.collage
+  background-color: $c-normal
+
+@media ( max-width: $md4 )
+  .footer .container
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr)
+    .footer
+      &-logo
+        grid-row: span 2
+        width: 50px
+      &__info, &__link
+        font-size: 15px

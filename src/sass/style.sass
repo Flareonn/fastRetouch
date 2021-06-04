@@ -1,0 +1,27 @@
+@import 'fonts'
+@import 'variables'
+@import 'null'
+
+.container
+  max-width: $maxWidthContainer+px
+  margin: 0px auto
+  @media ( min-width: $md0 )
+    max-width: 2560px
+  @media ( min-width: 1540+px )
+    max-width: 1115px
+  @media ( max-width: $md1 )
+    max-width: 970px
+  @media ( max-width: $md2 )
+    max-width: 579px
+  @media ( max-width: $md3 )
+    max-width: 537px
+  @media ( max-width: $md4 )
+    max-width: none
+    padding: 0px 20px
+
+@import './index/main'
+@import './index/warning'
+@import './index/catalog'
+@import './index/features'
+@import './index/videos'
+@import './index/share'

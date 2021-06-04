@@ -1,0 +1,45 @@
+.hero
+  background-color: $c-active
+  @media ( max-width: $md4 )
+    background-color: $c-normal
+  .container
+    display: flex
+    flex-wrap: wrap
+    padding: 16px 0px
+    @media ( max-width: $md2 )
+      align-items: center
+    @media ( max-width: $md3 )
+      flex-direction: column
+  &-block
+    flex-basis: 50%
+    @media ( max-width: $md2 )
+      flex-basis: 40%
+    &:last-child
+      flex-basis: 45%
+      margin-left: 5%
+      color: #efece5
+      line-height: 1.15
+      @media ( max-width: $md2 )
+        flex-basis: 55%
+      @media ( max-width: $md3 )
+        order: -1
+        margin-left: 0
+        br
+          display: none
+      p
+        font-size: 22px
+        margin-bottom: 20px
+        @media ( max-width: $md2 )
+          font-size: 20px
+          margin-bottom: 0px
+        @media ( max-width: $md3 )
+          display: none
+    &__title
+      margin-bottom: 16px
+      font-family: 'Quiche'
+      font-weight: 500
+      font-size: 50px
+      @media ( max-width: $md2 )
+        font-size: 36px
+      @media ( max-width: $md4 )
+        text-align: center
