@@ -21,8 +21,8 @@ const makeIntersect = (parentID, observerID) => {
   parentID = document.querySelector(parentID)
   const handler = (entries) => {
     !entries[0].isIntersecting
-      ? observerID.classList.add('active')
-      : observerID.classList.remove('active')
+      ? observerID.style.marginRight = '0px'
+      : observerID.style.marginRight = '-' + observerID.clientWidth + 'px'
   }
   const observer = new IntersectionObserver(handler)
   observer.observe(parentID)

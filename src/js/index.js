@@ -368,11 +368,12 @@ class TemplateCard {
   }
 
   _createElement() {
+    const imageSrc = this.imagePath.slice(0, -4);
     this.elementHTML = `
       <div class="catalog-card" data-id=${this.id}>
         <picture>
-          <source srcset="${this.imagePath.slice(0, -4) + '.webp'}" type="image/webp">
-          <img src=${this.imagePath} alt="${this.title}" class="catalog-card__image">
+          <source srcset="${imageSrc + '-m.webp'}" type="image/webp">
+          <img src="${imageSrc + '-m.jpg'}" alt="${this.title}" class="catalog-card__image">
         </picture>
         <h3 class="catalog-card__title">${this.title}</h3>
       </div>    
@@ -405,37 +406,41 @@ class TemplateCard {
       </div>
     </div>
     <div class="catalog-popup__content">
-      <svg
-        class="catalog-popup__back"
-        width="23px"
-        height="23px"
-        viewBox="0 0 23 23"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <g
-          stroke="none"
-          stroke-width="1"
-          fill="#2e464a"
-          fill-rule="evenodd"
-        >
-          <rect
-            transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) "
-            x="10.3137085"
-            y="-3.6862915"
-            width="2"
-            height="30"
-          ></rect>
-          <rect
-            transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) "
-            x="10.3137085"
-            y="-3.6862915"
-            width="2"
-            height="30"
-          ></rect>
-        </g>
-      </svg>
+      <div class="catalog-popup__back">
+        <div class="catalog-popup__back_circle">
+          <svg
+            class="svgCloser"
+            width="23px"
+            height="23px"
+            viewBox="0 0 23 23"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g
+              stroke="none"
+              stroke-width="1"
+              fill="#2e464a"
+              fill-rule="evenodd"
+            >
+              <rect
+                transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) "
+                x="10.3137085"
+                y="-3.6862915"
+                width="2"
+                height="30"
+              ></rect>
+              <rect
+                transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) "
+                x="10.3137085"
+                y="-3.6862915"
+                width="2"
+                height="30"
+              ></rect>
+            </g>
+          </svg>
+        </div>
+      </div>
       <h2 class="catalog-popup__title">${this.title}</h2>
       <strong>Functions</strong>
       <ul class="catalog-popup__list">
@@ -457,9 +462,11 @@ class TemplateCard {
     catalog.innerHTML += this.popup;
     this.swiper = new Swiper(".mySwiper", {
       spaceBetween: 10,
-      effect: "fade",
       centeredSlides: true,
       loop: true,
+      freeMode: true,
+      observer: true,
+      observeParents: true,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -469,7 +476,10 @@ class TemplateCard {
     activePopup.querySelector('.catalog-popup__slider').style.width = this.swiper.width + 'px'
   }
   _closerPopup(e) {
-    if(['catalog-popup__back', 'catalog-popup__link catalog-popup__link_back'].includes(e.target.classList.value)
+    if(['catalog-popup__back',
+        'catalog-popup__back_circle',
+        'svgCloser',
+        'catalog-popup__link catalog-popup__link_back'].includes(e.target.classList.value)
         || e.target.tagName === "rect") {          
           activePopup.removeEventListener('click', this._closerPopup)
           window.removeEventListener('resize', this._handleSlider)
@@ -496,7 +506,9 @@ class TemplateCard {
 let cards = [];
 
 offers.forEach((i) => {
-  i.categories = i.categories.map(i => i.toLowerCase())
+  i.categories = i.categories.map(cat => cat.toLowerCase())
+  if(window.innerWidth < 576)
+    i.title = i.title.split(/Photoshop/).join('<br>Photoshop');
   let card = new TemplateCard(i)
   catalog.innerHTML += card.elementHTML;
   cards.push(card)
@@ -513,6 +525,8 @@ catalogFilter.addEventListener('click', function({target}) {
       if(target.dataset.cat === 'all' || offer.categories.includes(target.dataset.cat))
         catalog.innerHTML += offer.elementHTML;
     })
+
+    fixImage();
     
     document.querySelector('.catalog').scrollIntoView({behavior: 'smooth'})
   }
@@ -545,8 +559,23 @@ Array
 
 videoContent.addEventListener('click', () => document.querySelector('.videos-about__content').classList.toggle('active'))
 
-// const fixImage = () => {
-//   document
-//     .querySelectorAll('.catalog-card > picture')
-//     .forEach(item => item.style.height = item.clientWidth + 'px')
-// }
+const fixImage = () => {
+  catalog
+    .querySelectorAll('.catalog-card > picture img')
+    .forEach(item => {
+        new Promise(resolve => {
+          item.onerror = () => resolve(item)
+          if(item.classList.contains('error')) resolve(item)
+        }).then(stylingImage)
+      }
+    )
+}
+
+const stylingImage = (i) => {
+  i.closest('picture').style.height = 'calc(100% - '+ i.closest('picture').nextElementSibling.offsetHeight +'px )'
+  i.style.height = '100%'
+  i.classList.add('error')
+}
+
+fixImage();
+window.addEventListener('resize', fixImage)
