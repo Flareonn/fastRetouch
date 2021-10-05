@@ -17,13 +17,13 @@ testWebP(function (support) {
 // LINKS
 
 const makeIntersect = (parentID, observerID) => {
-  observerID = document.querySelector(observerID)
-  parentID = document.querySelector(parentID)
+  observerID = document.querySelector(observerID);
+  parentID = document.querySelector(parentID);
   const handler = (entries) => {
     !entries[0].isIntersecting
-      ? observerID.style.marginRight = '0px'
-      : observerID.style.marginRight = '-' + observerID.clientWidth + 'px'
+      ? observerID.style.marginLeft = `0px`
+      : observerID.style.marginLeft = `-${observerID.clientWidth}px`;
   }
-  const observer = new IntersectionObserver(handler)
-  observer.observe(parentID)
+  const observer = new IntersectionObserver(handler);
+  observer.observe(parentID);
 }

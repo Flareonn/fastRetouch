@@ -1,0 +1,64 @@
+@import 'variables'
+@import 'null'
+
+@import 'bootstrap-grid'
+
+body
+  background-color: #F2F4F5
+  transition: .25s all linear
+  font-family: "Nunito Sans", sans-serif
+
+h1
+  font-family: "Quiche", sans-serif
+  text-align: center
+  letter-spacing: -0.005em
+  color: #57707A
+  margin: 20px 0px 77px
+  font-size: 31px
+  line-height: 40px
+  @media (min-width: $xxl)
+    font-size: 92px
+    line-height: 120px
+    margin: 57px 0px 176px
+  @media (min-width: $xl)
+    font-size: 80px
+    line-height: 105px
+    margin: 30px 0px 166px
+  @media (min-width: $lg)
+    font-size: 68px
+    line-height: 89px
+    margin: 63px 0px 137px
+  @media (min-width: $md)
+    font-size: 54px
+    line-height: 71px
+    margin: 40px 0px 104px
+  @media (min-width: $sm)
+    font-size: 42px
+    line-height: 55px
+    margin: 26px 0px 84px
+
+@import 'tutorial/header'
+@import 'tutorial/videos'
+@import 'tutorial/course'
+@import 'tutorial/tool'
+@import 'tutorial/footer'
+
+.main-share__links
+  position: fixed
+  top: 50%
+  transform: translateY(-50%)
+  left: 0
+  display: flex
+  flex-direction: column
+  transition: .5s all linear
+  a
+    margin-left: 0
+    &:first-child
+      margin-bottom: -3px
+
+@font-face
+  font-family: "Quiche"
+  src: url("../fonts/QuicheFlare-Regular.ttf") format("truetype")
+  font-weight: normal
+  font-style: normal
+  font-display: swap

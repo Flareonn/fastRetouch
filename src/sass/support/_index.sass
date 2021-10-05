@@ -1,97 +1,382 @@
 body.support
-  .main
-    background-color: $c-sec
-    padding: 70px 0px
-    .container
-      display: block
-      text-align: center
-    &__title
-      font-size: 59px
-      color: $c-active
-      font-family: 'Quiche'
-      font-weight: 500
-      margin-bottom: 40px
-      @media (max-width: $md3)
-        font-size: 36px
-    &__subtitle
-      color: $c-active
-      font-size: 25px
-      font-family: 'Quiche'
-      margin-bottom: 55px
-      line-height: 1.15
-      @media (max-width: $md3)
-        font-size: 20px
-      @media (max-width: $md4)
-        br
-          display: none
-    &-form
-      width: 50%
-      margin: 0 auto
-      color: $c-active
+  background-color: #F2F4F5
+.footer
+  background-color: #F2F4F5
+  padding-bottom: 0
+  &-top
+    margin: 0px 150px
+    @media ( max-width: $md2 )
+      margin: 0
+    &__inner
       display: flex
+      flex-direction: column
+      color: #5D7985
+      font-weight: 500
+      font-size: 50px
+      line-height: 65px
+      position: relative
+      &:first-child
+        margin-top: 500px
+        margin-right: 180px
+        @media ( max-width: $md1 )
+          margin-top: 0
+          margin-right: 0
+        @media ( max-width: $md4 )
+          margin-top: 70px
+          margin-left: 16px
+      &:last-child
+        @media ( max-width: $md1 )
+          order: -1
+        @media ( max-width: $md4 )
+          order: 0
+        &::after
+          display: block
+          content: ''
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          left: -280px
+          width: 251px
+          height: 200px
+          background-image: url('../img/support/line.svg')
+          background-repeat: no-repeat
+          background-position: center
+          background-size: contain
+          @media ( max-width: $md1 )
+            display: none
+          @media ( max-width: $md4 )
+            display: block
+            top: 20%
+            left: -89px
+            width: 87px
+            height: 45px
+        span
+          margin-left: 55px
+          font-family: 'Quiche'
+          @media ( max-width: $md4 )
+            margin-left: 15px
+    &__wrapper
+      display: flex
+      align-items: center
+      justify-content: center
       flex-wrap: wrap
-      @media (max-width: $md2)
-        width: 100%
-      &__group
-        display: flex
-        flex-direction: column
-        flex-basis: 47.5%
-        @media (max-width: $md3)
-          flex-basis: 100%
-        &:nth-child(odd)
-          margin-right: 5%
-          @media (max-width: $md3)
+      @media ( max-width: $md4 )
+        flex-wrap: nowrap
+        justify-content: flex-end
+      &:first-child
+        @media ( max-width: $md1 )
+          margin-bottom: 50px
+        @media ( max-width: $md4 )
+          position: relative
+        img
+          margin-right: 10%
+          flex-basis: 40%
+          @media ( max-width: $md1 )
             margin-right: 0
-        &:not(:last-child)
+            margin-bottom: 50px
+          @media ( max-width: $md4 )
+            position: absolute
+            top: 0
+            left: -50%
+        p
+          flex-basis: 10%
+      &:nth-child(2)
+        h3
+          font-weight: 500
+          font-size: 44.4367px
+          line-height: 58px
+          color: #3A4D53
+          margin-left: 50px
+          margin-bottom: 17px
+          font-family: 'Quiche'
+          @media ( max-width: $md4 )
+            font-size: 16px
+            line-height: 20px
+            margin-bottom: 6px
+            margin-left: 10px
+        p
+          font-size: 38.4317px
+          line-height: 44px
+          color: #5D7985
+          text-decoration: underline
+          margin-bottom: 35px
+          font-family: 'Quiche'
+          @media ( max-width: $md4 )
+            font-size: 13.8px
+            line-height: 15.9px
+            margin-bottom: 12px
+        span
+          font-size: 38.4317px
+          line-height: 44px
+          color: #5D7985
+          font-family: 'Made'
+          font-weight: 300
           margin-bottom: 25px
-        &:nth-last-child(4)
-          flex-basis: 100%
+          @media ( max-width: $md4 )
+            font-size: 16px
+            margin-bottom: 9px
+            line-height: 15.9px
+        .footer-top__inner:first-child
+          img
+            width: 405px
+      &-text
+        font-weight: 500
+        font-size: 68px
+        line-height: 88px
+        color: #5FBF80
+        @media ( max-width: $md4 )
+          font-size: 28px
+          line-height: 37.4px
+        span
+          font-family: 'Quiche'
+          display: block
+          &:first-child
+            font-size: 140px
+            @media ( max-width: $md4 )
+              font-size: 60px
+          &:last-child
+            font-size: 200px
+            line-height: 120px
+            @media ( max-width: $md4 )
+              font-size: 84px
+              line-height: 60px
+  &-bottom
+    margin-top: 190px
+    padding: 27px 0px
+    background: #82A2AF
+    @media ( max-width: $md4 )
+      margin-top: 90px
+    .container
+      display: flex
+    .footer-logo img
+      width: 110px
+      height: 110px
+      @media ( max-width: $md4 )
+        width: 28px
+        height: 28px
+.main
+  background-color: #F2F4F5
+  padding: 110px 0px 25px
+  @media ( max-width: $md4 )
+    padding-top: 43px
+  .container
+    display: block
+    text-align: center
+  &-form
+    display: flex
+    flex-wrap: wrap
+    &__file
+      position: absolute
+      width: 100%
+      height: 246px
+      top: 0px
+      left: 0
+      z-index: 2
+      opacity: 0
+      cursor: pointer
+      @media ( max-width: $md4 )
+        height: 85px
+    &__submit
+      background: #5FBF80
+      border-radius: 6.58457px
+      font-size: 35.1177px
+      line-height: 34px
+      text-align: center
+      color: #F2F4F5
+      padding: 33px 78px
+      @media ( max-width: $md3 )
+        padding: 33px 0
+        width: 100%
+      @media ( max-width: $md4 )
+        width: 130px
+        height: 40px
+        font-size: 13px
+        padding: 0
+        border-radius: 2.437px
+    &__group
+      flex-basis: calc(50% - 15px)
+      position: relative
+      display: flex
+      margin-bottom: 80px
+      @media ( max-width: $md4 )
+        margin-bottom: 18px
+      @media ( max-width: $md2 )
+        flex-basis: 100%
+      &:nth-child(odd)
+        margin-right: 15px
+        @media ( max-width: $md2 )
           margin-right: 0
-        &_textarea
-          flex-basis: 100%
-          margin-right: 0
-        &:last-child
-          flex-basis: 100%
-      &__file
-        display: none
-        padding: 20px
-        color: $c-sec
-        background-color: $c-normal
-        cursor: pointer
-        &::-webkit-file-upload-button
-          display: none
-        &_custom
-          padding: 20px
-          color: $c-sec
-          background-color: $c-normal
-          cursor: pointer
-          &:hover
-            background-color: $c-normal-2
-      &__label
-        font-size: 16px
-        padding-bottom: 5px
-        align-self: flex-start
-      &__input
-        border: 1px solid $c-active
-        padding: 10px 15px
-        resize: none
-        border-radius: 5px
-        @media (max-width: $md3)
-          padding: 15px 25px
-        &#userText
-          height: 150px
-      &__submit
-        background-color: $c-active
-        color: $c-sec
-        border-radius: 20px
-        padding: 15px 50px
+      &:nth-child(even)
+        margin-left: 15px
+        @media ( max-width: $md2 )
+          margin-left: 0
+      &:last-child, &:nth-last-child(2)
+        margin-bottom: 25px
+        display: flex
+        justify-content: center
+        margin: 0
+      &:nth-last-child(2), &:nth-last-child(1), &_textarea
+        flex-basis: 100%
+      &_textarea
+        margin-bottom: 80px
+        margin-left: 0!important
+        @media ( max-width: $md4 )
+          margin-bottom: 18px
+      &.field
+        @media ( max-width: $md4 )
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+        input, textarea
+          height: 59px
+          position: relative
+          z-index: 2
+          background: transparent
+          border-radius: 12.8669px
+          border: 1.46557px solid #5D7985
+          padding: 15px 5px
+          outline: none
+          width: 100%
+          @media ( max-width: $md4 )
+            height: 32px
+            border: 0.979112px solid #5D7985
+            border-radius: 4.89556px
+          &:focus
+            border-color: #aaa
+            -webkit-box-shadow: inset 0 2px 4px -1px #ddd
+            -moz-box-shadow: inset 0 2px 4px -1px #ddd
+            -ms-box-shadow: inset 0 2px 4px -1px #ddd
+            box-shadow: inset 0 2px 4px -1px #ddd
+        label
+          position: absolute
+          left: 10px
+          background-color: #F2F4F5
+          font-size: 26px
+          font-weight: 300
+          color: #5D7985
+          top: -14px
+          padding: 0 2px 0px 1px
+          display: inline-block
+          z-index: 3
+          @media ( max-width: $md4 )
+            position: relative
+            left: 0
+            top: 0
+            text-align: left
+            margin-bottom: 1px
+            font-size: 16px
+        textarea
+          height: 246px
+          resize: none
+          @media ( max-width: $md4 )
+            height: 160px
+      &.file
+        display: block
+        text-align: left
+        margin-bottom: 70px
+        @media ( max-width: $md4 )
+          margin-bottom: 20px
+        span
+          font-size: 26px
+          font-weight: 500
+          color: #5D7985
+          font-weight: 300
+          @media ( max-width: $md4 )
+            font-size: 16px
+      .uploader
+        margin-top: 10px
+        position: relative
+        overflow: hidden
+        width: 100%
+        height: 246px
+        background: #82A2AF
+        border: 1.42768px solid #5D7985
+        border-radius: 12.5342px
         display: flex
         align-items: center
         justify-content: center
-        cursor: pointer
-        @media (max-width: $md4)
-          padding: 20px 50px
-        &:hover
-          background-color: darken($c-active, 50%)
-  .collage
-    background-color: $c-active
+        @media ( max-width: $md4 )
+          height: 85px
+        span
+          font-size: 26px
+          line-height: 26px
+          color: #F2F4F5
+          &:nth-of-type(2)
+            font-weight: 300
+            @media ( max-width: $md4 )
+              display: none
+        &.clear
+          background-color: #f2f4f5
+          border: none
+          &::after
+            display: none
+        &::after
+          display: block
+          content: ''
+          position: absolute
+          top: 10px
+          left: 10px
+          width: calc(100% - 20px)
+          height: calc(100% - 20px)
+          border: 1.55469px dashed #BDCDD3
+          box-sizing: border-box
+          border-radius: 6.21876px
+          @media ( max-width: $md4 )
+            display: none
+        img
+          position: absolute
+          display: none
+          width: 100%
+          height: 100%
+          top: 0px
+          left: 0px
+          z-index: 1
+          border: none
+          object-fit: contain
+.header
+  height: 464px
+  @media ( max-width: $md4 )
+    height: 175px
+  &__image
+    position: absolute
+    z-index: 5
+    object-fit: cover
+    height: 464px
+    @media ( max-width: $md4 )
+      height: 175px
+  .container
+    position: relative
+    z-index: 6
+    color: #F2F4F5
+    padding-top: 110px
+    @media ( max-width: $md2 )
+      padding-top: 50px
+    @media ( max-width: $md4 )
+      padding-top: 40px
+  &__title
+    font-family: 'Quiche'
+    font-weight: 500
+    font-size: 83.5897px
+    line-height: 98px
+    margin-bottom: 40px
+    @media (max-width: $md3)
+      font-size: 76px
+    @media ( max-width: $md4 )
+      font-size: 28px
+      line-height: 32.7px
+      margin-bottom: 10px
+  &__subtitle
+    font-size: 35.1077px
+    margin-bottom: 55px
+    line-height: 41px
+    @media ( max-width: $md2 )
+      width: 450px
+    @media (max-width: $md3)
+      font-size: 36px
+    @media (max-width: $md4)
+      width: 230px
+      font-size: 14px
+      line-height: 16.38px
+      margin-bottom: 0
+.collage
+  background-color: $c-active

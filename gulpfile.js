@@ -11,7 +11,7 @@ let path = {
   },
   src: {
     html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
-    css: source_folder + "/sass/{style,404,general}.sass",
+    css: source_folder + "/sass/{style,404,general,tutorial}.sass",
     js: source_folder + "/js/{script,index}.js",
     img: source_folder + "/img/**/*.{jpg,png,svg,giv,ico,webp}",
     fonts: source_folder + "/fonts/*.{ttf,woff,woff2,txt}",
@@ -37,9 +37,7 @@ let { src, dest } = require("gulp"),
   rename = require("gulp-rename"),
   uglify = require("gulp-uglify-es").default,
   imagemin = require("gulp-imagemin"),
-  webp = require("gulp-webp"),
-  webphtml = require("gulp-webp-html"),
-  webpcss = require("gulp-webpcss");
+  webp = require("gulp-webp");
 
 function browserSync(params) {
   browsersync.init({
@@ -54,7 +52,6 @@ function browserSync(params) {
 function html() {
   return src(path.src.html)
     .pipe(fileinclude())
-    .pipe(webphtml())
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream());
 }
@@ -78,7 +75,6 @@ function css() {
         cascade: true,
       })
     )
-    .pipe(webpcss())
     .pipe(dest(path.build.css))
     .pipe(clean_css())
     .pipe(

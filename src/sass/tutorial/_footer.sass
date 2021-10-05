@@ -1,0 +1,54 @@
+.footer
+  background-color: #82a2af
+  @media (min-width: 1920px)
+    padding-left: 50px
+    padding-right: 50px
+  @media (min-width: 1200px)
+    padding-left: 40px
+    padding-right: 40px
+  @media (min-width: 992px)
+    padding-left: 30px
+    padding-right: 30px
+  @media (min-width: 768px)
+    padding: 19px 25px 35px
+  @media (min-width: 576px)
+    padding-left: 75px
+    padding-right: 75px
+  @media (min-width: 0px)
+    padding: 22px 34px 19px
+  &-logo
+    width: 40px
+    height: 40px
+    margin-right: 15px
+    &__wrapper
+      @media (min-width: 768px)
+        display: inline-flex
+        flex-direction: column
+      @media (min-width: 0px)
+        display: flex
+        justify-content: space-between
+    &__link,&__copy
+      font-size: 13px
+      line-height: 15px
+      color: #F2F4F5
+    &__copy
+      margin-bottom: 3px
+  &-share
+    color: #F2F4F5
+    text-align: center
+    @media (min-width: 768px)
+      margin-bottom: 0
+    @media (min-width: 0px)
+      margin-bottom: 30px
+    &__title
+      font-size: 24px
+      line-height: 24px
+      margin-bottom: 16px
+    &__hero
+      font-size: 13px
+      line-height: 16px
+      margin-bottom: 25px
+      display: block
+    &__links
+      display: flex
+      justify-content: center

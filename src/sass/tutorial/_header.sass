@@ -1,0 +1,37 @@
+.header
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+  padding: 37px 5px 30px 2px
+  border-bottom: none
+  &-logo img
+    width: 127px
+    object-fit: none
+  @media ( min-width: $xxl )
+    padding: 55px 0px 48px
+    &-logo img
+      width: 297px
+  @media ( min-width: $xl )
+    padding: 54px 60px
+  @media ( min-width: $lg )
+    padding: 54px 61px 48px
+    &-logo img
+      width: 263px
+  @media ( min-width: $md )
+    padding: 60px 29px 48px 46px
+    &-logo img
+      width: 185px
+  @media ( min-width: $sm )
+    padding: 36px 16px 45px
+    &-logo img
+      width: 166px
+  &>.container
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &-mail
+    color: #57707A
+    @media ( min-width: $xxl )
+      font-size: 16px
+    @media ( min-width: $xl )
+      font-size: 14px
+    @media ( min-width: $xs )
+      font-size: 10px
