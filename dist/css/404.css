@@ -891,9 +891,8 @@ footer {
 }
 
 .header-logo img {
-  width: 127px;
-  -o-object-fit: none;
-     object-fit: none;
+  width: 98px;
+  height: 25px;
 }
 
 .header > .container {
@@ -1456,6 +1455,7 @@ footer {
 
   .header-logo img {
     width: 166px;
+    height: 42px;
   }
 
   .footer {
@@ -1938,6 +1938,7 @@ footer {
 
   .header-logo img {
     width: 185px;
+    height: 46px;
   }
 
   .footer {
@@ -2433,6 +2434,7 @@ footer {
 
   .header-logo img {
     width: 263px;
+    height: 65px;
   }
 
   .footer {
@@ -3400,7 +3402,8 @@ footer {
   }
 
   .header-logo img {
-    width: 297px;
+    width: 440px;
+    height: 109px;
   }
 
   .header-mail {

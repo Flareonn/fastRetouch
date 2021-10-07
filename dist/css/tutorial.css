@@ -865,9 +865,8 @@ h1 {
 }
 
 .header-logo img {
-  width: 127px;
-  -o-object-fit: none;
-     object-fit: none;
+  width: 98px;
+  height: 25px;
 }
 
 .header > .container {
@@ -930,7 +929,9 @@ h1 {
 }
 
 .videos-list__item:hover {
-  background-color: #d3f8de;
+  background-color: #ffee95;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .videos-list__item-link {
@@ -966,6 +967,10 @@ h1 {
 
 .videos__link:hover b {
   text-decoration: underline;
+}
+
+.course .col-12 {
+  padding: 0;
 }
 
 .course .col-md-8.col-12 {
@@ -1053,31 +1058,26 @@ h1 {
 .course-wrapper__list {
   margin-top: 40px;
   cursor: pointer;
+  font-family: "Made", sans-serif;
+  padding: 0px 10px;
 }
 
 .course-wrapper__list-item {
-  font-size: 19px;
+  font-size: 14px;
   line-height: 32px;
   color: #57707a;
+  display: block;
 }
 
 .course-wrapper__list-item > span:first-child {
   display: none;
 }
 
-.course-wrapper__list-item:hover {
-  background-color: #d3f8de;
-}
-
-.course-wrapper__list-item.panel-hover {
+.course-wrapper__list-item:hover,
+.course-wrapper__list-item.hover {
+  background-color: #ffee95;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 23px;
-  background-color: #fff;
-  -webkit-transition: .5s all;
-  -o-transition: .5s all;
-  transition: .5s all;
-  color: #985BA7;
 }
 
 .course-wrapper__list-item:not(:last-child) {
@@ -1114,11 +1114,7 @@ h1 {
       -ms-user-select: none;
           user-select: none;
   width: 236px;
-}
-
-.panel button,
-.panel a {
-  cursor: default !important;
+  cursor: pointer;
 }
 
 .panel .main-nav {
@@ -1145,7 +1141,6 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: default;
 }
 
 .panel .main-nav__button.active,
@@ -1172,7 +1167,6 @@ h1 {
   display: -ms-inline-flexbox;
   display: inline-flex;
   height: 12px;
-  cursor: default;
 }
 
 .panel .main-filters__button:hover path {
@@ -1221,7 +1215,6 @@ h1 {
   color: #ffffff;
   margin-bottom: 6px;
   padding-bottom: 1px;
-  cursor: default;
   width: 68px;
   height: 24px;
   font-size: 11px;
@@ -1283,7 +1276,6 @@ h1 {
   background: #454545;
   border: 1px solid #6f6d6d;
   color: #e0e0e1;
-  cursor: default;
   width: 26px;
   height: 24px;
   font-size: 10px;
@@ -1339,7 +1331,6 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: default;
 }
 
 .panel .main-options__align:nth-child(2),
@@ -1461,7 +1452,6 @@ h1 {
 
 .panel .main-footer__link {
   color: #adadad;
-  cursor: default;
   font-size: 8px !important;
   line-height: 9px;
 }
@@ -1773,11 +1763,13 @@ h1 {
 .tool__button {
   text-transform: none;
   font-weight: 500;
-  padding: 9.5px 0px;
-  font-size: 18px;
-  line-height: 21px;
-  min-width: 119px;
+  font-size: 9px;
+  line-height: 11px;
   letter-spacing: -0.015em;
+  min-width: 70px;
+  font-family: "Made", sans-serif;
+  padding: 6.5px 0px;
+  margin-left: 17px;
 }
 
 .tool__button:hover,
@@ -1788,8 +1780,7 @@ h1 {
 .tool__wrapper {
   background-color: #FFFFFF;
   border: 0.29612px solid rgba(87, 112, 122, 0.44);
-  padding: 37px 8px 24px 10px;
-  width: 100%;
+  padding: 21.5px 28px 21.5px 32px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
@@ -1799,8 +1790,8 @@ h1 {
 
 .tool__image {
   width: 100%;
-  -o-object-fit: none;
-     object-fit: none;
+  -webkit-filter: drop-shadow(6px 6px 11px rgba(0, 0, 0, 0.29)) drop-shadow(11px 11px 17px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(6px 6px 11px rgba(0, 0, 0, 0.29)) drop-shadow(11px 11px 17px rgba(0, 0, 0, 0.3));
 }
 
 .tool__inner {
@@ -1809,6 +1800,7 @@ h1 {
           justify-content: space-between;
   padding-bottom: 12px;
   width: 40%;
+  margin-left: 40px;
 }
 
 .tool__inner div span {
@@ -1817,18 +1809,19 @@ h1 {
 }
 
 .tool__inner div span:first-child {
-  font-size: 40px;
-  margin-bottom: 30px;
+  font-size: 35px;
+  margin: 14px 0px 5px 17px;
 }
 
 .tool__inner div span:nth-child(2) {
   text-transform: uppercase;
-  font-size: 15px;
-  margin-bottom: 17px;
+  font-size: 13px;
+  margin-left: 13px;
 }
 
 .tool__inner div span:last-child {
-  font-size: 63px;
+  font-size: 53px;
+  margin-left: 16px;
 }
 
 .footer {
@@ -2395,6 +2388,7 @@ h1 {
 
   .header-logo img {
     width: 166px;
+    height: 42px;
   }
 
   .videos {
@@ -2420,6 +2414,14 @@ h1 {
   .videos__link {
     font-size: 26px;
     margin-top: 44px;
+  }
+
+  .course {
+    padding: 0px 5px;
+  }
+
+  .course .col-12 {
+    padding: 0px 15px;
   }
 
   .course .col-md-8.col-12 {
@@ -2473,6 +2475,7 @@ h1 {
 
   .course-wrapper__list {
     margin-top: 90px;
+    padding: 0px 15px;
   }
 
   .course-wrapper__list-item {
@@ -2505,27 +2508,43 @@ h1 {
     margin-bottom: 48px;
   }
 
+  .tool__button {
+    min-width: 119px;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 9.5px 0px;
+    margin-left: 0;
+  }
+
   .tool__wrapper {
-    padding: 37px 55px 36px 47px;
+    padding: 36px 56px 36px 47px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    width: 100%;
   }
 
   .tool__inner {
     padding-bottom: 30px;
+    margin-left: 0;
   }
 
   .tool__inner div span:first-child {
     font-size: 58px;
+    margin-bottom: 30px;
+    margin-top: 0;
+    margin-left: 0;
   }
 
   .tool__inner div span:nth-child(2) {
     font-size: 21px;
+    margin-bottom: 17px;
+    margin-left: 0;
   }
 
   .tool__inner div span:last-child {
     font-size: 90px;
+    margin-left: 0;
   }
 
   .footer {
@@ -2992,6 +3011,7 @@ h1 {
 
   .header-logo img {
     width: 185px;
+    height: 46px;
   }
 
   .videos {
@@ -3092,6 +3112,10 @@ h1 {
   .tool__subtitle {
     font-size: 32px;
     line-height: 37px;
+  }
+
+  .tool__wrapper {
+    padding: 39px 56px 39px 50px;
   }
 
   .tool__inner {
@@ -3590,6 +3614,7 @@ h1 {
 
   .header-logo img {
     width: 263px;
+    height: 65px;
   }
 
   .videos {
@@ -3686,7 +3711,7 @@ h1 {
   }
 
   .tool__wrapper {
-    padding: 41px 55px 27px 55px;
+    padding: 46px 68px 46px 60px;
   }
 
   .tool__inner {
@@ -4280,11 +4305,11 @@ h1 {
   }
 
   .tool__wrapper {
-    padding: 56px 34px 36px 75px;
+    padding: 63px 95px 63px 81px;
   }
 
   .tool__inner {
-    padding-bottom: 88px;
+    padding-bottom: 62px;
   }
 
   .tool__inner div span:first-child {
@@ -4764,7 +4789,8 @@ h1 {
   }
 
   .header-logo img {
-    width: 297px;
+    width: 440px;
+    height: 109px;
   }
 
   .header-mail {
@@ -4856,7 +4882,7 @@ h1 {
   }
 
   .tool__wrapper {
-    padding: 67px 69px 43px 88px;
+    padding: 74px 106px 74px 95px;
   }
 
   .tool__inner {

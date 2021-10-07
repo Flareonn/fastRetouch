@@ -464,7 +464,6 @@ class TemplateCard {
         this.id
       }>
         <picture>
-          <source srcset="${imageSrc + "-m.webp"}" type="image/webp">
           <img
             src="${imageSrc + "-m.jpg"}"
             alt="${this.title}"
